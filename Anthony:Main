@@ -1,0 +1,27 @@
+//Anthony's Main so far. 
+// IF YOU COPY INTO A THING TO TEST AND RUN:
+// dont forget to use reformat to fix the copy/paste ugliness
+
+#include <iostream>
+using namespace std;
+
+void die(){       //simple die function
+  cout << "BAD INPUT";
+  exit(EXIT_FAILURE);
+}
+
+
+int main(){
+
+while (true){
+  int future = cin.peek();
+  if ((future) == EOF){break;}
+    string opperator; //this is the operation you'd like to do (LET, LOOP, etc.)
+    cin >> opperator; 
+    char variable;    //this is the variable you'd like to use
+    cin >> variable;
+    int input;        //here is the number youd like to do stuff with.
+    cin >> input;
+  }
+  die();
+}
