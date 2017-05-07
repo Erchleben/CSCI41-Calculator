@@ -3,25 +3,44 @@
 // dont forget to use reformat to fix the copy/paste ugliness
 
 #include <iostream>
+#include <string>
+#include <locale>
+
 using namespace std;
 
-void die(){       //simple die function
-  cout << "BAD INPUT";
-  exit(EXIT_FAILURE);
+void die() {      //simple die function
+    cout << "BAD INPUT\n";
+    exit(EXIT_FAILURE);
 }
 
 
-int main(){
+int main() {
+    while(true){
+        int future = cin.peek();
+        if((future) == EOF){break;}
 
-while (true){
-  int future = cin.peek();
-  if ((future) == EOF){break;}
-    string opperator; //this is the operation you'd like to do (LET, LOOP, etc.)
-    cin >> opperator; 
-    char variable;    //this is the variable you'd like to use
-    cin >> variable;
-    int input;        //here is the number youd like to do stuff with.
-    cin >> input;
-  }
-  die();
+        string commit; //this is the operation you'd like to do (LET, LOOP, etc.)
+        cin >> commit;
+        locale loc;
+        for ( string::size_type i = 0; i<commit.length(); i++){ // this bit of code is a toupper for strings
+            cout << toupper(commit[i],loc);
+        //cout << commit << endl;
+        }
+            cout << endl;
+        char variable;    //this is the variable you'd like to use
+        cin >> variable;
+        cout << variable << endl;
+
+        char opperator;     //this is the opperator you'd like to use (+ = / * etc.)
+        cin >> opperator;
+        if(opperator != '+' && opperator != '=' && opperator != '*' && opperator!='-' &&opperator !='/' &&opperator!= '^'){die();}
+        cout << opperator << endl;
+
+        int input;        //here is the number youd like to do stuff with.
+        cin >> input;
+        cout << input << endl;
+
+        //die();
+    }
+    die();
 }
